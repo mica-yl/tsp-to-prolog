@@ -1,8 +1,11 @@
 module T2P (showTSP) where
 
 import qualified CombinatorialOptimisation.TSP as TSP (numCities,TSPProblem(..),edgeCost)
-import CombinatorialOptimisation.TSP (TSPProblem(..))
 import qualified Control.Monad as M (guard)
+import qualified Data.Char as C (digitToInt)
+
+import CombinatorialOptimisation.TSP (TSPProblem(..))
+import Data.Array (Array(..),(!),listArray)
 -- import qualified TSPutils as U
 
 type Cost = Double  
@@ -23,10 +26,15 @@ prettyEdge (a,b,c) = "edge("++
                        showC b ++","++
                        show c ++")." 
 
+mapDigit :: (Char -> Char ) -> Int -> String 
+mapDigit f i =map f  (show i)
+
+encoder :: Char -> Char 
+encoder i = listArray ('0','9') ['a'..] ! i
+
+ 
 showC :: Int -> String 
-showC n =  last . take (n+1) $ list
-      where list = l ++ map (++"a") list 
-            l = map (:"") $ ['a'..'z']++['A'..'Z']
+showC = mapDigit encoder
 
 convertor :: TSPProblem -> [CEdge]
 convertor x = map edgeCost'  . edgeGenerator $ citiesNum
