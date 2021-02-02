@@ -1,0 +1,65 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 71a2a635f1a6ce4552015f26b3cd3a81ebba27d3b8f8ee2078aa83fd5222e0f3
+
+name:           tsp2prolog
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/miko99/tsp2prolog#readme>
+homepage:       https://github.com/miko99/tsp2prolog#readme
+bug-reports:    https://github.com/miko99/tsp2prolog/issues
+author:         mikel
+maintainer:     mikosimo0@gmail.com
+copyright:      2021 mikel
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/miko99/tsp2prolog
+
+library
+  exposed-modules:
+      T2P
+  other-modules:
+      Paths_tsp2prolog
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , combinatorial-problems
+  default-language: Haskell2010
+
+executable tsp2prolog
+  main-is: Main.hs
+  other-modules:
+      Paths_tsp2prolog
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , combinatorial-problems
+    , tsp2prolog
+  default-language: Haskell2010
+
+test-suite tsp2prolog-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tsp2prolog
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , combinatorial-problems
+    , tsp2prolog
+  default-language: Haskell2010

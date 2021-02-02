@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "tsp2prolog:lib"
+
+    - path: "./app/Main.hs"
+      component: "tsp2prolog:exe:tsp2prolog-exe"
+
+    - path: "./app/Paths_tsp2prolog.hs"
+      component: "tsp2prolog:exe:tsp2prolog-exe"
+
+    - path: "./test"
+      component: "tsp2prolog:test:tsp2prolog-test"
