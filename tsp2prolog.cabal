@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 71a2a635f1a6ce4552015f26b3cd3a81ebba27d3b8f8ee2078aa83fd5222e0f3
+-- hash: cf9825cefa1a4b2786da8fdc10aaca54476c7252bae78cf244f2521f1f0bf535
 
 name:           tsp2prolog
 version:        0.1.0.0
@@ -33,7 +33,8 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , combinatorial-problems
   default-language: Haskell2010
 
@@ -45,7 +46,8 @@ executable tsp2prolog
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , combinatorial-problems
     , tsp2prolog
   default-language: Haskell2010
@@ -59,7 +61,8 @@ test-suite tsp2prolog-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , combinatorial-problems
     , tsp2prolog
   default-language: Haskell2010

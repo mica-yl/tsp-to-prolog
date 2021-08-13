@@ -30,11 +30,11 @@ mapDigit :: (Char -> Char ) -> Int -> String
 mapDigit f i =map f  (show i)
 
 encoder :: Char -> Char 
-encoder i = listArray ('0','9') ['a'..] ! i
+encoder i = listArray ('0','9') ['A'..] ! i
 
  
 showC :: Int -> String 
-showC = mapDigit encoder
+showC = ("n"++) . mapDigit encoder
 
 convertor :: TSPProblem -> [CEdge]
 convertor x = map edgeCost'  . edgeGenerator $ citiesNum
